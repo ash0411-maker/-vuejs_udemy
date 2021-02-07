@@ -4,7 +4,7 @@
   <div>
     <LikeHeader></LikeHeader>
     <p>{{ number}}</p>
-    <LikeNumber v-bind:totalNumber="number" v-on:my-click="number = $event"></LikeNumber>
+    <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number"></LikeNumber>
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
   },
   components: {
     LikeHeader //ES6
+  },
+  methods: {
+    inermentNumber(value) {
+      this.number = value
+    }
   }
 }
 </script>
