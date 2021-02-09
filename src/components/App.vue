@@ -3,8 +3,7 @@
 <template>
   <div>
     <LikeHeader>
-      <h2>とーたるいいね数（slotと置き換わる）</h2>
-      <h3>{{ number }}</h3>
+
     </LikeHeader>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>

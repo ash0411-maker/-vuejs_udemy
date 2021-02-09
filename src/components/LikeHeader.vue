@@ -1,6 +1,8 @@
 <template>
   <div>
-    <slot></slot>
+    <slot>
+      <h1>フォールバックコンテンツ （デフォルト）</h1>
+    </slot>
   </div>
 </template>
 
