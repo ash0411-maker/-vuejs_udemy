@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot name="hello"></slot>
+    <slot></slot>
     <hr>
     <p>いいねの数</p>
     <slot name="num"></slot>

@@ -6,6 +6,7 @@
       <template v-slot:hello>
         <h2>ウス</h2>
       </template>
+      <h3>デフォルトのスロッと</h3>
       <template v-slot:num>
         <h2>{{ number }}</h2>
       </template>
