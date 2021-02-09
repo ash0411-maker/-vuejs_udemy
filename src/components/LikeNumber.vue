@@ -7,12 +7,7 @@
 
 <script>
 export default {
-  props: {
-    totalNumber: {
-      type: Number,
-      default: 10
-    }
-  },
+  props: ["totalNumber"],
   computed: {
     halfNumber: function() {
       return this.totalNumber / 2
@@ -20,7 +15,7 @@ export default {
   },
   methods: {
     increment: function() {
-      // this.totalNumber += 10
+      // this.totalNumber += 1 子が親のデータを変えることはできない。
       this.$emit("my-click", this.totalNumber + 1);
     }
   }

@@ -5,7 +5,7 @@
     <LikeHeader></LikeHeader>
     <p>{{ number}}</p>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
-    <LikeNumber v-bind:totalNumber="number"></LikeNumber>
+    <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import LikeHeader from "./LikeHeader"
 export default {
   data() {
     return {
-      number: 14
+      number: 20
     };
   },
   components: {
