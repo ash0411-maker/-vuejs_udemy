@@ -1,8 +1,9 @@
 <template>
   <div>
-    <slot>
-      <h1>フォールバックコンテンツ （デフォルト）</h1>
-    </slot>
+    <slot name="hello"></slot>
+    <hr>
+    <p>いいねの数</p>
+    <slot name="num"></slot>
   </div>
 </template>
 

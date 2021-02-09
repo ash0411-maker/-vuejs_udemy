@@ -3,7 +3,12 @@
 <template>
   <div>
     <LikeHeader>
-
+      <template v-slot:hello>
+        <h2>ウス</h2>
+      </template>
+      <template v-slot:num>
+        <h2>{{ number }}</h2>
+      </template>
     </LikeHeader>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
