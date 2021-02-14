@@ -13,6 +13,12 @@
     </LikeHeader>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
+    <div>
+      <h2>イベントフォーム</h2>
+      <label for="title">タイトル</label>
+      <input id="title" type="text" v-model="eventData.title">
+      <p>{{ eventData.title }}</p>
+    </div>
   </div>
 </template>
 
@@ -21,7 +27,10 @@ import LikeHeader from "./LikeHeader"
 export default {
   data() {
     return {
-      number: 20
+      number: 20,
+      eventData: {
+        title: "タイトル",
+      }
     };
   },
   components: {
