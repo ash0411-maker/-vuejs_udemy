@@ -21,9 +21,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  div {
-    border: 5px solid pink
-  }
-</style>

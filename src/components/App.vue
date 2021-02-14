@@ -13,10 +13,11 @@
     </LikeHeader>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
+
     <div>
       <h2>イベントフォーム</h2>
       <label for="title">タイトル</label>
-      <input id="title" type="text" v-model="eventData.title">
+      <input id="title" type="text" v-model.lazy="eventData.title">
       <p>{{ eventData.title }}</p>
     </div>
   </div>
@@ -43,9 +44,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  div {
-    border: 5px solid blue
-  }
-</style>

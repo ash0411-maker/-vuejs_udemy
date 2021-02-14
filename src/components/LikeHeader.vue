@@ -13,9 +13,3 @@ export default {
   props: ["headerText"]
 };
 </script>
-
-<style scoped>
-  div {
-    border: 5px solid green
-  }
-</style>
