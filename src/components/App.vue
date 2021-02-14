@@ -31,6 +31,9 @@
       <label for="host">タイトル</label>
       <input id="host" type="text" v-model.trim="eventData.host">
       <pre>{{ eventData.host }}</pre>
+      <label for="detail">イベント詳細</label>
+      <textarea name="detail" id="detail" cols="30" rows="10" v-model="eventData.detail"></textarea>
+      <pre>{{ eventData.detail }}</pre>
     </div>
   </div>
 </template>
@@ -44,7 +47,8 @@ export default {
       eventData: {
         title: "タイトル",
         maxNumber: 0,
-        host: ""
+        host: "",
+        detail: ""
       }
     };
   },
