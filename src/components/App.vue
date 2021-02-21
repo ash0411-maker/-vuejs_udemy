@@ -1,7 +1,7 @@
 <!-- 親コンポーネント -->
 
 <template>
-  <div>
+  <div style="padding: 10rem">
     <LikeHeader>
       <template v-slot:hello>
         <h2>ウス</h2>
@@ -14,18 +14,20 @@
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="inermentNumber"></LikeNumber>
 
-    <div>
-      <h2>イベントフォーム</h2>
-      <label for="title">タイトル</label>
-      <input id="title" type="text" v-model.lazy="eventData.title">
-      <pre>{{ eventData.title }}</pre>
-    </div>
+    <h2>イベントフォーム</h2>
+    <EventTitle v-model="eventData.title"></EventTitle>
+    <EventTitle
+      :value="eventData.title"
+      @input="eventData.title=$event"
+    ></EventTitle>
+
     <div>
       <h2>最大人数</h2>
       <label for="maxNumber">タイトル</label>
       <input id="maxNumber" type="number" v-model.number="eventData.maxNumber">
       <p>{{ eventData.maxNumber }}</p>
     </div>
+
     <div>
       <h2>主催者</h2>
       <label for="host">タイトル</label>
@@ -52,16 +54,24 @@
       <input type="radio" id="paid" value="有料" v-model="eventData.price">
       <label for="paid">有料</label>
       <p>{{ eventData.price }}</p>
+
+      <p>開催場所</p>
+      <select v-model="eventData.location">
+        <option v-for="location in locations" :key="location">{{ location }}</option>
+      </select>
+      <p>{{ eventData.location }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import LikeHeader from "./LikeHeader"
+import LikeHeader from "./LikeHeader";
+import EventTitle from "./EventTitle.vue";
 export default {
   data() {
     return {
       number: 20,
+      locations: ["東京", "京都", "大阪"],
       eventData: {
         title: "タイトル",
         maxNumber: 0,
@@ -70,11 +80,13 @@ export default {
         isPrivate: false,
         target: [],
         price: "無料",
+        location: "京都"
       }
     };
   },
   components: {
-    LikeHeader //ES6
+    LikeHeader, //ES6
+    EventTitle,
   },
   methods: {
     inermentNumber(value) {
